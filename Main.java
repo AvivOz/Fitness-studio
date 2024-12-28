@@ -1,7 +1,7 @@
-import gym.Exception.*;
+import gym.exception.*;
 import gym.customers.*;
 import gym.management.*;
-import gym.management.Sessions.*;
+import gym.sessions.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -107,7 +107,10 @@ public class Main {
 
         gymSecretary.paySalaries();
 
-        gym.setSecretary(p3,8000);
+        System.out.println("Before setSecretary: " + gym.getSecretary().getBalance());
+        gym.setSecretary(p3, 8000);
+        System.out.println("After setSecretary: " + gym.getSecretary().getBalance());
+
         Secretary newGymSecretary = gym.getSecretary();
 
         try{
@@ -126,7 +129,5 @@ public class Main {
 
         System.out.print(gym);
     }
-
-
 
 }
